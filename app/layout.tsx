@@ -2,7 +2,8 @@ import { cn } from "@/lib/utils";
 import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import MainNav from "./(components)/main-nav";
+import MainNav from "../components/main-nav";
+import MainFooter from "@/components/main-footer";
 
 export const inter = Inter({
   subsets: ["latin"],
@@ -22,12 +23,13 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={cn(
-          "tracking-tight dark bg-darkBlue bg-[url('/background-blur.png')] bg-cover bg-center bg-no-repeat",
-          inter.className
+          "items-around dark flex min-h-screen flex-col overflow-x-hidden bg-darkBlue bg-[url('/background-blur.png')] bg-cover bg-center bg-no-repeat tracking-tight",
+          inter.className,
         )}
       >
         <MainNav />
         {children}
+        <MainFooter />
       </body>
     </html>
   );

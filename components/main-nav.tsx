@@ -35,7 +35,7 @@ export default function MainNav() {
       href={href}
       className={cn("duration-300 hover:scale-110", {
         "text-lightBlue": pathname === href,
-        "hidden md:block text-lg": desktop,
+        "hidden text-lg md:block": desktop,
       })}
     >
       {children}
@@ -54,9 +54,9 @@ export default function MainNav() {
           className="absolute h-screen w-screen bg-darkBlue opacity-80"
           onClick={() => setMobileMenu(false)}
         />
-        <div className="animate-fadeIn absolute top-4 right-4 flex flex-col items-center justify-center gap-7 rounded-xl bg-[#131d36] pl-10 pb-9 pr-16 pt-12 font-semibold">
+        <div className="animate-fadeIn absolute right-4 top-4 flex flex-col items-center justify-center gap-7 rounded-xl bg-[#131d36] pb-9 pl-10 pr-16 pt-12 font-semibold">
           <Cross2Icon
-            className="absolute top-5 right-5 h-5 w-5 text-white duration-300 hover:scale-110"
+            className="absolute right-5 top-5 h-5 w-5 text-white duration-300 hover:scale-110"
             onClick={() => setMobileMenu(false)}
           />
           <NavLink href="/">Home</NavLink>
@@ -77,9 +77,9 @@ export default function MainNav() {
           className="absolute h-full w-full bg-darkBlue opacity-80"
           onClick={() => setShoppingCart(false)}
         />
-        <div className="animate-fadeIn absolute top-4 right-9 flex flex-col items-center justify-center gap-7 rounded-xl bg-[#131d36] pl-10 pb-9 pr-16 pt-12 font-medium md:top-0 md:right-0 md:h-full md:w-80 md:justify-start md:rounded-none lg:w-96">
+        <div className="animate-fadeIn absolute right-9 top-4 flex flex-col items-center justify-center gap-7 rounded-xl bg-[#131d36] pb-9 pl-10 pr-16 pt-12 font-medium md:right-0 md:top-0 md:h-full md:w-80 md:justify-start md:rounded-none lg:w-96">
           <Cross2Icon
-            className="h-5 absolute top-5 right-5 md:top-10 md:right-11 w-5 text-white duration-300 hover:scale-110 lg:h-7 lg:w-7"
+            className="absolute right-5 top-5 h-5 w-5 text-white duration-300 hover:scale-110 md:right-11 md:top-10 lg:h-7 lg:w-7"
             onClick={() => setShoppingCart(false)}
           />
           <h1 className="text-lg font-bold">Shopping Cart</h1>
@@ -88,7 +88,7 @@ export default function MainNav() {
       </section>
 
       {/* desktop navbar */}
-      <nav className="mt-7 flex w-screen justify-between px-7 md:mt-9 md:px-10">
+      <nav className="mt-7 flex justify-between px-7 md:mt-9 md:px-10">
         <div className="flex items-center justify-center gap-2">
           <Image
             src="/fakestore-logo.svg"
