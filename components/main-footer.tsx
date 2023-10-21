@@ -57,7 +57,7 @@ export default function MainFooter() {
           <h1 className="mb-1 text-sm font-semibold md:text-base">Follow us</h1>
           <div className="flex items-center gap-1">
             <Image
-              src="/facebook.svg"
+              src="facebook.svg"
               width={12}
               height={12}
               alt="Facebook icon"
@@ -68,7 +68,7 @@ export default function MainFooter() {
           </div>
           <div className="flex items-center gap-1">
             <Image
-              src="/twitter.svg"
+              src="twitter.svg"
               width={12}
               height={12}
               alt="Twitter icon"
@@ -79,7 +79,7 @@ export default function MainFooter() {
           </div>
           <div className="flex items-center gap-1">
             <Image
-              src="/youtube.svg"
+              src="youtube.svg"
               width={12}
               height={12}
               alt="Youtube icon"
@@ -91,7 +91,7 @@ export default function MainFooter() {
           </div>
           <div className="flex items-center gap-1">
             <Image
-              src="/instagram.svg"
+              src="instagram.svg"
               width={12}
               height={12}
               alt="Instagram icon"
@@ -118,7 +118,7 @@ export default function MainFooter() {
         </div>
       </div>
 
-      <hr className="my-11 w-full border-t-[1px] opacity-50" />
+      <hr className="my-11 w-screen border-t-[1px] border-white opacity-50 " />
 
       <p className="text-xs font-semibold md:text-sm">
         © Copyright 2023 | fakestore - All Rights Reserved

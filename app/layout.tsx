@@ -23,7 +23,7 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={cn(
-          "items-around dark flex min-h-screen flex-col overflow-x-hidden bg-darkBlue bg-[url('/background-blur.png')] bg-cover bg-center bg-no-repeat tracking-tight",
+          "items-around dark flex min-h-screen flex-col gap-20 overflow-x-hidden bg-darkBlue bg-[url('/background-blur.png')] bg-cover bg-center bg-no-repeat tracking-tight",
           inter.className,
         )}
       >

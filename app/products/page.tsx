@@ -1,3 +1,46 @@
-export default function page() {
-  return <div>products </div>;
+"use client";
+
+import { useScrollAnimation } from "../hooks";
+import { products, stacks } from "../constants";
+import ProductCard from "@/components/product-card";
+import StackCard from "@/components/stack-card";
+import { cn } from "@/lib/utils";
+
+export default function Products() {
+  useScrollAnimation();
+
+  return (
+    <main className="flex w-screen flex-col items-center justify-between gap-20 text-center text-white md:gap-20 lg:gap-32">
+      <section className="container flex flex-col items-center justify-center gap-16 px-5 md:gap-20">
+        <h1 className="flex flex-wrap text-4xl font-bold md:text-6xl lg:text-7xl">
+          Supplements
+        </h1>
+        <div
+          className={cn("grid grid-cols-1 gap-20 md:grid-cols-3 md:gap-x-10")}
+        >
+          {products.map((product, index) => (
+            <ProductCard
+              key={index}
+              product={product}
+              className={cn({ "animate-on-scroll": index >= 2 })}
+            />
+          ))}
+        </div>
+      </section>
+
+      <hr className="container border-t-[1px] opacity-50" />
+
+      <section className="container flex flex-col items-center justify-center gap-16 px-5 md:gap-20">
+        <h1 className="animate-on-scroll flex flex-wrap text-4xl font-bold md:text-6xl lg:text-7xl">
+          Stacks
+        </h1>
+
+        <div className="grid grid-cols-1 gap-20 md:grid-cols-3 md:gap-x-10 ">
+          {stacks.map((stack, index) => (
+            <StackCard key={index} stack={stack} />
+          ))}
+        </div>
+      </section>
+    </main>
+  );
 }

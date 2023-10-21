@@ -2,10 +2,10 @@
 module.exports = {
   darkMode: ["class"],
   content: [
-    './pages/**/*.{ts,tsx}',
-    './components/**/*.{ts,tsx}',
-    './app/**/*.{ts,tsx}',
-    './src/**/*.{ts,tsx}',
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
   ],
   theme: {
     container: {
@@ -19,7 +19,6 @@ module.exports = {
       colors: {
         darkBlue: "#0B1120",
         lightBlue: "#38BDF8",
-
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -76,4 +75,27 @@ module.exports = {
     },
   },
   plugins: [require("tailwindcss-animate")],
-}
+};
+
+// old config
+// import type { Config } from "tailwindcss";
+
+// const config: Config = {
+//   content: [
+//     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
+//     "./components/**/*.{js,ts,jsx,tsx,mdx}",
+//     "./app/**/*.{js,ts,jsx,tsx,mdx}",
+//   ],
+//   theme: {
+//     extend: {
+//       backgroundImage: {
+//         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
+//         "gradient-conic":
+//           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+//       },
+//     },
+//   },
+//   plugins: [],
+// };
+
+// export default config;

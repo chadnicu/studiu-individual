@@ -91,7 +91,7 @@ export default function MainNav() {
       <nav className="mt-7 flex justify-between px-7 md:mt-9 md:px-10">
         <div className="flex items-center justify-center gap-2">
           <Image
-            src="/fakestore-logo.svg"
+            src="fakestore-logo.svg"
             className="h-8 w-8 md:h-10 md:w-10"
             width={50}
             height={50}
