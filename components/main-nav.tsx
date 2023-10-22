@@ -1,11 +1,8 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import {
-  BackpackIcon,
-  Cross2Icon,
-  HamburgerMenuIcon,
-} from "@radix-ui/react-icons";
+import { ShoppingCartIcon } from "@heroicons/react/24/outline";
+import { Cross2Icon, HamburgerMenuIcon } from "@radix-ui/react-icons";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -91,11 +88,11 @@ export default function MainNav() {
       <nav className="mt-7 flex justify-between px-7 md:mt-9 md:px-10">
         <div className="flex items-center justify-center gap-2">
           <Image
-            src="fakestore-logo.svg"
+            src="/fakestore-logo.svg"
             className="h-8 w-8 md:h-10 md:w-10"
             width={50}
             height={50}
-            alt="Niga"
+            alt="fakestore logo"
           />
           <Link href="/" className="text-xl font-semibold md:text-2xl">
             fakestore
@@ -117,12 +114,12 @@ export default function MainNav() {
           <NavLink href="/sign-in" desktop>
             Sign In
           </NavLink>
-          <BackpackIcon
-            className="h-5 w-5 text-lightBlue md:h-7 md:w-7"
+          <ShoppingCartIcon
+            className="h-6 w-6 text-lightBlue md:h-8 md:w-8 duration-300 hover:scale-110"
             onClick={() => setShoppingCart(true)}
           />
           <HamburgerMenuIcon
-            className="h-5 w-5 text-white md:hidden"
+            className="h-6 w-6 text-white md:hidden"
             onClick={() => setMobileMenu(true)}
           />
         </div>

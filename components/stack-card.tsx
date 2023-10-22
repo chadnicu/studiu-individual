@@ -5,9 +5,9 @@ import Link from "next/link";
 export default function StackCard({ stack }: { stack: Stack }) {
   const { image, name, saving, price } = stack;
   return (
-    <div className="animate-on-scroll flex flex-col gap-4">
+    <div className="animate-on-scroll flex flex-col gap-4 hover:scale-110 duration-300">
       <Link
-        href="/products/transformation-stack"
+        href={`/products/stacks/${stack.name.toLocaleLowerCase()}`}
         className="flex h-56 w-52 flex-col items-center justify-center gap-3 rounded-2xl bg-[#1E293B] p-6"
       >
         <Image

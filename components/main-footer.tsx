@@ -57,7 +57,7 @@ export default function MainFooter() {
           <h1 className="mb-1 text-sm font-semibold md:text-base">Follow us</h1>
           <div className="flex items-center gap-1">
             <Image
-              src="facebook.svg"
+              src="/facebook.svg"
               width={12}
               height={12}
               alt="Facebook icon"
@@ -68,7 +68,7 @@ export default function MainFooter() {
           </div>
           <div className="flex items-center gap-1">
             <Image
-              src="twitter.svg"
+              src="/twitter.svg"
               width={12}
               height={12}
               alt="Twitter icon"
@@ -79,11 +79,10 @@ export default function MainFooter() {
           </div>
           <div className="flex items-center gap-1">
             <Image
-              src="youtube.svg"
+              src="/youtube.svg"
               width={12}
               height={12}
               alt="Youtube icon"
-              // className="w-3 md:w-4"
             />
             <FooterLink href="https://www.youtube.com/" blank>
               fakestore
@@ -91,7 +90,7 @@ export default function MainFooter() {
           </div>
           <div className="flex items-center gap-1">
             <Image
-              src="instagram.svg"
+              src="/instagram.svg"
               width={12}
               height={12}
               alt="Instagram icon"

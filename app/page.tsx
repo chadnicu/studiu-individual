@@ -14,7 +14,7 @@ import SwipeableReviews from "@/components/swipeable-reviews";
 import { useScrollAnimation } from "./hooks";
 
 export default function Home() {
-  useScrollAnimation();
+  useScrollAnimation("animate-on-scroll");
 
   return (
     <main className="mt-3 flex w-screen flex-col items-center justify-between gap-32 text-center text-white md:gap-44 lg:gap-36">

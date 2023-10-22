@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-export function useScrollAnimation() {
+export function useScrollAnimation(className: string) {
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries: IntersectionObserverEntry[]) => {
@@ -20,7 +20,7 @@ export function useScrollAnimation() {
         threshold: 0,
       },
     );
-    const targets = document.querySelectorAll(".animate-on-scroll");
+    const targets = document.querySelectorAll(`.${className}`);
     targets.forEach(function (target) {
       target.classList.add("animate-fadeOut");
       observer.observe(target);

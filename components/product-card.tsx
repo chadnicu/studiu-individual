@@ -13,7 +13,12 @@ export default function ProductCard({
 }) {
   const { name, description, price, starCount, image } = product;
   return (
-    <div className={cn("flex flex-col gap-4", className)}>
+    <div
+      className={cn(
+        "flex flex-col gap-4 duration-300 hover:scale-110",
+        className,
+      )}
+    >
       <Link
         href={"/products/" + name.toLocaleLowerCase()}
         className="flex h-56 w-52 flex-col items-center justify-center gap-3 rounded-2xl bg-[#1E293B] p-6"
@@ -21,8 +26,8 @@ export default function ProductCard({
         <Image
           src={image}
           width={130}
-          height={160}
-          className="max-h-40"
+          height={180}
+          className="max-h-52"
           alt={name}
         />
       </Link>
