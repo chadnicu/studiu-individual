@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import {
   BeakerIcon,
   NewspaperIcon,
@@ -8,17 +9,15 @@ import {
   TrophyIcon,
   ScaleIcon,
 } from "@heroicons/react/24/outline";
-
-import Link from "next/link";
 import SwipeableReviews from "@/components/swipeable-reviews";
-import { useScrollAnimation } from "./hooks";
+import { useScrollAnimation } from "@/app/hooks";
 
 export default function Home() {
   useScrollAnimation("animate-on-scroll");
 
   return (
     <main className="mt-3 flex w-screen flex-col items-center justify-between gap-32 text-center text-white md:gap-44 lg:gap-36">
-      <section className="container flex flex-col items-center justify-center gap-10 px-5 lg:px-48">
+      <section className="container flex flex-col items-center justify-center gap-10 px-5 md:px-16 lg:px-48">
         <h1 className="flex flex-wrap text-4xl font-bold md:text-6xl lg:text-7xl">
           Science based fitness suplementation
         </h1>

@@ -1,12 +1,12 @@
 "use client";
 
-import { cn } from "@/lib/utils";
-import { ShoppingCartIcon } from "@heroicons/react/24/outline";
-import { Cross2Icon, HamburgerMenuIcon } from "@radix-ui/react-icons";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ReactNode, useEffect, useState } from "react";
+import { ShoppingCartIcon } from "@heroicons/react/24/outline";
+import { Cross2Icon, HamburgerMenuIcon } from "@radix-ui/react-icons";
+import { cn } from "@/lib/utils";
 
 export default function MainNav() {
   const [mobileMenu, setMobileMenu] = useState(false);
@@ -66,7 +66,7 @@ export default function MainNav() {
 
       {/* shopping cart opened */}
       <section
-        className={cn("absolute right-0 top-0 z-10 h-screen w-screen", {
+        className={cn("absolute z-10 m-auto h-screen w-screen", {
           hidden: !shoppingCart,
         })}
       >
@@ -115,7 +115,7 @@ export default function MainNav() {
             Sign In
           </NavLink>
           <ShoppingCartIcon
-            className="h-6 w-6 text-lightBlue md:h-8 md:w-8 duration-300 hover:scale-110"
+            className="h-6 w-6 text-lightBlue duration-300 hover:scale-110 md:h-8 md:w-8"
             onClick={() => setShoppingCart(true)}
           />
           <HamburgerMenuIcon

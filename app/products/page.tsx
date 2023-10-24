@@ -1,7 +1,7 @@
 "use client";
 
-import { useScrollAnimation } from "../hooks";
-import { products, stacks } from "../constants";
+import { useScrollAnimation } from "@/app/hooks";
+import { products, stacks } from "@/app/constants";
 import ProductCard from "@/components/product-card";
 import StackCard from "@/components/stack-card";
 import { cn } from "@/lib/utils";
@@ -34,7 +34,7 @@ export default function Products() {
         className="container flex flex-col items-center justify-center gap-16 px-5 md:gap-20"
         id="stacks"
       >
-        <h1 className="animate-on-scroll flex flex-wrap text-4xl font-bold md:text-6xl lg:text-7xl">
+        <h1 className="animate-on-scroll flex flex-wrap text-4xl font-bold md:text-6xl lg:text-7xl ">
           Stacks
         </h1>
         <div className="grid grid-cols-1 gap-20 md:grid-cols-3 md:gap-x-10 ">

@@ -22,7 +22,7 @@ export default function MainFooter() {
   );
 
   return (
-    <footer className="mt-10 flex flex-col items-center justify-center p-10 md:px-16">
+    <footer className="flex flex-col items-center justify-center p-10 md:px-16">
       {/* phone only */}
       <div className="mb-10 text-left md:mb-0 md:hidden">
         <h1 className="mb-1 text-sm font-semibold md:text-base">Disclaimer</h1>

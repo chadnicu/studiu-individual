@@ -1,8 +1,8 @@
+import Image from "next/image";
+import Link from "next/link";
 import type { Product } from "@/app/constants";
 import { cn } from "@/lib/utils";
 import { StarIcon } from "@heroicons/react/20/solid";
-import Image from "next/image";
-import Link from "next/link";
 
 export default function ProductCard({
   product,

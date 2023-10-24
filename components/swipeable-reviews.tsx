@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
 import { reviews } from "@/app/constants";
-import ReviewCard from "./review-card";
+import ReviewCard from "@/components/review-card";
 
 export default function SwipeableReviews() {
   const [isPhone, setIsPhone] = useState(window.innerWidth < 768);

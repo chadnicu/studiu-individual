@@ -21,7 +21,7 @@ export default function MapOpenner({
         width={350}
         height={330}
         alt={alt}
-        className="w-72 md:w-full"
+        className="w-48 duration-300 hover:scale-110 md:w-72 lg:w-80"
         onClick={() => setOpened(true)}
       />
       {opened && (
@@ -37,7 +37,7 @@ export default function MapOpenner({
               alt={alt}
               useMap={`#${alt}`}
             />
-            <p className="mt-5">(Click on a product to buy it individually)</p>
+            <p className="mt-5">(Click on a product to shop it individually)</p>
           </div>
           {map}
         </div>

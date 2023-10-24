@@ -16,7 +16,7 @@ export function useScrollAnimation(className: string) {
       },
       {
         root: document.querySelector("#scrollArea"),
-        rootMargin: "0px 0px -30% 0px",
+        rootMargin: `0px 0px ${window.innerWidth < 1500 ? "-30%" : "-20%"} 0px`,
         threshold: 0,
       },
     );
