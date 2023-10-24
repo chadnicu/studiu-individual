@@ -7,7 +7,9 @@ import { reviews } from "@/app/constants";
 import ReviewCard from "@/components/review-card";
 
 export default function SwipeableReviews() {
-  const [isPhone, setIsPhone] = useState(window.innerWidth < 768);
+  const [isPhone, setIsPhone] = useState(
+    typeof window !== "undefined" ? window.innerWidth < 768 : 0,
+  );
   const [translateX, setTranslateX] = useState(isPhone ? 26 : 52);
   const [count, setCount] = useState(0);
   const swipeSize = isPhone ? 304 : 464;
@@ -27,6 +29,8 @@ export default function SwipeableReviews() {
   }
 
   useEffect(() => {
+    if (typeof window === "undefined") return;
+
     function handleResize() {
       const isPhone = window.innerWidth < 768;
       setIsPhone(isPhone);
