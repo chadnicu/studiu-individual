@@ -149,7 +149,10 @@ export default function About() {
           </p>
           <br />
           <p className="animate-on-scroll">
-            <Link href="/products" className="underline underline-offset-4">
+            <Link
+              href="/products"
+              className="duration-200 hover:text-lightBlue hover:underline"
+            >
               Click here
             </Link>{" "}
             to view our product list.

@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { ReactNode, useEffect, useState } from "react";
 import { ShoppingCartIcon } from "@heroicons/react/24/outline";
 import { Cross2Icon, HamburgerMenuIcon } from "@radix-ui/react-icons";
