@@ -12,6 +12,16 @@ export const inter = Inter({
 export const metadata: Metadata = {
   title: "Fakestore",
   description: "Fake supplement store mockup",
+  colorScheme: "dark",
+  applicationName: "Fakestore",
+  authors: [
+    {
+      name: "iusedebian",
+      url: "https://github.com/iusedebian",
+    },
+  ],
+  creator: "iusedebian",
+  publisher: "iusedebian",
 };
 
 export default function RootLayout({
