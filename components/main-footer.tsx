@@ -120,7 +120,7 @@ export default function MainFooter() {
       <hr className="my-11 w-screen border-t-[1px] border-white opacity-50 " />
 
       <p className="text-xs font-semibold md:text-sm">
-        © Copyright 2023 | fakestore - All Rights Reserved
+        © Copyright 2023 | Fakestore - All Rights Reserved
       </p>
     </footer>
   );
