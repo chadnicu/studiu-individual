@@ -28,7 +28,7 @@ export default function Products() {
         </div>
       </section>
 
-      <hr className="container border-t-[1px] opacity-50" />
+      <hr className="container border-t-[1px] border-white opacity-30" />
 
       <section
         className="container flex flex-col items-center justify-center gap-16 px-5 md:gap-20"

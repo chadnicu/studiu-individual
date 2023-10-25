@@ -26,9 +26,9 @@ export default function Login() {
           </a>
         </p>
         <div className="mb-8 flex w-full">
-          <hr className="border-1 w-full" />
+          <hr className="border-1 w-full border-white opacity-30" />
           <span className="mt-[-10px] w-fit px-2 font-bold">OR</span>
-          <hr className="border-1 w-full" />
+          <hr className="border-1 w-full border-white opacity-30" />
         </div>
         <button className="relative z-0 w-full rounded-full bg-white py-5 font-semibold text-black duration-300 hover:scale-110">
           <Image

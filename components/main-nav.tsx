@@ -60,7 +60,7 @@ export default function MainNav() {
           <NavLink href="/products">Products</NavLink>
           <NavLink href="/about">About</NavLink>
           <NavLink href="/contact">Contact</NavLink>
-          <NavLink href="/login">Login</NavLink>
+          <NavLink href="/sign-in">Sign In</NavLink>
         </div>
       </section>
 
