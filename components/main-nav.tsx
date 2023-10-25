@@ -43,7 +43,7 @@ export default function MainNav() {
     <>
       {/* mobile menu opened */}
       <section
-        className={cn("absolute h-screen w-screen md:hidden", {
+        className={cn("absolute z-10 h-screen w-screen md:hidden", {
           hidden: !mobileMenu,
         })}
       >

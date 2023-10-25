@@ -30,7 +30,7 @@ export default function Login() {
           <span className="mt-[-10px] w-fit px-2 font-bold">OR</span>
           <hr className="border-1 w-full" />
         </div>
-        <button className="relative w-full rounded-full bg-white py-5 font-semibold text-black duration-300 hover:scale-110">
+        <button className="relative z-0 w-full rounded-full bg-white py-5 font-semibold text-black duration-300 hover:scale-110">
           <Image
             src="/google.svg"
             alt="google icon"

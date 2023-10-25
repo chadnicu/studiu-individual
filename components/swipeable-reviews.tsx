@@ -5,14 +5,14 @@ import { useEffect, useState } from "react";
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
 import { reviews } from "@/app/constants";
 import ReviewCard from "@/components/review-card";
+import { cn } from "@/lib/utils";
 
 export default function SwipeableReviews() {
-  const [isPhone, setIsPhone] = useState(
-    typeof window !== "undefined" ? window.innerWidth < 768 : 0,
-  );
-  const [translateX, setTranslateX] = useState(isPhone ? 26 : 52);
+  const [translateX, setTranslateX] = useState(0);
   const [count, setCount] = useState(0);
-  const swipeSize = isPhone ? 304 : 464;
+  const [swipeSize, setSwipeSize] = useState(
+    typeof window !== "undefined" && window.innerWidth < 768 ? 304 : 464,
+  );
 
   function increment() {
     if (count < reviews.length) {
@@ -29,12 +29,11 @@ export default function SwipeableReviews() {
   }
 
   useEffect(() => {
-    if (typeof window === "undefined") return;
-
     function handleResize() {
-      const isPhone = window.innerWidth < 768;
-      setIsPhone(isPhone);
-      setTranslateX((isPhone ? 26 : 52) - count * (isPhone ? 304 : 464));
+      const swipeSize = window.innerWidth < 768 ? 304 : 464;
+      const translateX = count * swipeSize;
+      setSwipeSize(swipeSize);
+      setTranslateX(-translateX);
     }
 
     window.addEventListener("resize", handleResize);
@@ -42,7 +41,7 @@ export default function SwipeableReviews() {
     return () => {
       window.removeEventListener("resize", handleResize);
     };
-  }, [count, isPhone]);
+  }, [count]);
 
   return (
     <div className="animate-on-scroll flex items-center">
@@ -54,7 +53,9 @@ export default function SwipeableReviews() {
       </button>
       <div className="flex h-48 w-72 items-center justify-start overflow-hidden md:w-[500px]">
         <div
-          className="flex items-center gap-16 transition-transform duration-300 ease-in-out"
+          className={cn(
+            "flex items-center gap-16 transition-transform duration-300 ease-in-out first:ml-[26px] md:first:ml-[52px]",
+          )}
           style={{ transform: `translateX(${translateX}px)` }}
         >
           {reviews.map((review, index) => (
