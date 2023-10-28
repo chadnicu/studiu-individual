@@ -81,7 +81,7 @@ export default function About() {
           </p>
         </div>
       </section>
-      <hr className="container border-white opacity-30 border-t-[1px] opacity-50" />
+      <hr className="container border-t-[1px] border-white opacity-30 opacity-50" />
       <section className="container flex flex-col justify-center gap-10 px-5 lg:px-20">
         <div className="flex flex-col items-end gap-5 text-right">
           <h3 className="animate-on-scroll max-w-md text-xl font-bold">
@@ -108,7 +108,7 @@ export default function About() {
           </p>
         </div>
       </section>
-      <hr className="container border-white border-t-[1px] opacity-30" />
+      <hr className="container border-t-[1px] border-white opacity-30" />
       <section className="animate-on-scroll container flex flex-col justify-center gap-10 px-5 lg:px-20">
         <div className="text-left">
           <p className="animate-on-scroll">The bottom line is this...</p>

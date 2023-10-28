@@ -1,5 +1,5 @@
 import "./globals.css";
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import MainNav from "@/components/main-nav";
 import MainFooter from "@/components/main-footer";
@@ -9,10 +9,13 @@ export const inter = Inter({
   subsets: ["latin"],
 });
 
+export const viewport: Viewport = {
+  colorScheme: "dark",
+};
+
 export const metadata: Metadata = {
   title: "Fakestore",
   description: "Fake supplement store mockup",
-  colorScheme: "dark",
   applicationName: "Fakestore",
   authors: [
     {
