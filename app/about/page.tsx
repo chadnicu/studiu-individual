@@ -3,7 +3,7 @@
 import { useScrollAnimation } from "@/app/hooks";
 import Image from "next/image";
 import Link from "next/link";
-import { VideoPopover } from "./video-popover";
+import { VideoPopover } from "@/components/video-popover";
 
 export default function About() {
   useScrollAnimation("animate-on-scroll");
@@ -21,7 +21,12 @@ export default function About() {
             to building muscle, losing fat and improving overall health and
             fitness.
           </p>
-          <VideoPopover className="hidden md:block" />
+          <Link
+            href={"/about/video"}
+            className="mx-auto hidden rounded-full border bg-lightBlue p-5 px-7 py-5 text-lg font-semibold duration-300 hover:scale-110 md:block md:px-9 md:py-6 md:text-xl lg:w-[50%]"
+          >
+            See our video
+          </Link>
         </div>
         <div className="grid gap-8 text-center">
           <Image
@@ -38,7 +43,12 @@ export default function About() {
             fitness.
           </p>
         </div>
-        <VideoPopover className="md:hidden" />
+        <Link
+          href={"/about/video"}
+          className="mx-auto rounded-full border bg-lightBlue p-5 px-7 py-5 text-lg font-semibold duration-300 hover:scale-110 md:hidden md:px-9 md:py-6 md:text-xl lg:w-[50%]"
+        >
+          See our video
+        </Link>
       </section>
       <hr className="container border-t-[1px] border-white opacity-30" />
       <section className="container flex flex-col items-center justify-center gap-10 px-5 lg:px-48">
