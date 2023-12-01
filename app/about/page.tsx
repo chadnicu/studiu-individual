@@ -3,6 +3,7 @@
 import { useScrollAnimation } from "@/app/hooks";
 import Image from "next/image";
 import Link from "next/link";
+import { VideoPopover } from "./video-popover";
 
 export default function About() {
   useScrollAnimation("animate-on-scroll");
@@ -20,6 +21,7 @@ export default function About() {
             to building muscle, losing fat and improving overall health and
             fitness.
           </p>
+          <VideoPopover className="hidden md:block" />
         </div>
         <div className="grid gap-8 text-center">
           <Image
@@ -36,50 +38,43 @@ export default function About() {
             fitness.
           </p>
         </div>
+        <VideoPopover className="md:hidden" />
       </section>
       <hr className="container border-t-[1px] border-white opacity-30" />
-      <section className="container flex flex-col justify-center gap-10 px-5 lg:px-20">
-        <p className="animate-on-scroll max-w-lg text-left">
+      <section className="container flex flex-col items-center justify-center gap-10 px-5 lg:px-48">
+        <p className="animate-on-scroll">
           You work hard for every ounce of muscle you build, every pound of fat
           you burn, and every strength gain you achieve. You stay consistent
           with your workouts from week to week, follow a properly structured
           eating plan, and manage your rest and recovery to support your fitness
           goals.
         </p>
-        <div className="animate-on-scroll flex justify-end">
-          <h3 className="max-w-md text-right text-xl font-bold">
-            THAT&apos;S WHY YOU DESERVE HONEST, EFFECTIVE SUPPLEMENTS THAT TRULY
-            WORK WHEN USED IN CONJUNCTION WITH YOUR TRAINING AND DIET.
-          </h3>
-        </div>
-        <div className="max-w-md text-left">
-          <p className="animate-on-scroll">
-            Over-the-top promises, “high profile” endorsements and flashy labels
-            might look great on paper, but they don&apos;t deliver what actually
-            matters in the real world: results.
-          </p>
-          <br />
-          <p className="animate-on-scroll">The reality?</p>
-          <br />
-          <p className="animate-on-scroll">
-            The vast majority of popular “mainstream” fitness supplements on the
-            market are, quite simply, garbage.
-          </p>
-          <br />
-          <p className="animate-on-scroll">
-            In most cases, all they are is a random concoction of ineffective,
-            under-dosed, and sometimes even dangerous ingredients that are not
-            backed by reliable studies, created for the sole purpose of turning
-            a profit.
-          </p>
-          <br />
-          <p className="animate-on-scroll">
-            My goal was to identify every single thing wrong with nearly all of
-            the current “muscle building” and “fat burning” supplements on the
-            market today, and to formulate a product line that directly
-            addressed and overcame all of these issues.
-          </p>
-        </div>
+        <h3 className="animate-on-scroll text-xl font-bold">
+          THAT&apos;S WHY YOU DESERVE HONEST, EFFECTIVE SUPPLEMENTS THAT TRULY
+          WORK WHEN USED IN CONJUNCTION WITH YOUR TRAINING AND DIET.
+        </h3>
+        <p className="animate-on-scroll">
+          Over-the-top promises, “high profile” endorsements and flashy labels
+          might look great on paper, but they don&apos;t deliver what actually
+          matters in the real world: results.
+        </p>
+        <p className="animate-on-scroll">The reality?</p>
+        <p className="animate-on-scroll">
+          The vast majority of popular “mainstream” fitness supplements on the
+          market are, quite simply, garbage.
+        </p>
+        <p className="animate-on-scroll">
+          In most cases, all they are is a random concoction of ineffective,
+          under-dosed, and sometimes even dangerous ingredients that are not
+          backed by reliable studies, created for the sole purpose of turning a
+          profit.
+        </p>
+        <p className="animate-on-scroll">
+          My goal was to identify every single thing wrong with nearly all of
+          the current “muscle building” and “fat burning” supplements on the
+          market today, and to formulate a product line that directly addressed
+          and overcame all of these issues.
+        </p>
       </section>
       <hr className="container border-t-[1px] border-white opacity-50" />
       <section className="container flex flex-col justify-center gap-10 px-5 lg:px-20">
@@ -110,55 +105,51 @@ export default function About() {
       </section>
       <hr className="container border-t-[1px] border-white opacity-30" />
       <section className="animate-on-scroll container flex flex-col justify-center gap-10 px-5 lg:px-20">
-        <div className="text-left">
-          <p className="animate-on-scroll">The bottom line is this...</p>
-          <br />
-          <p className="animate-on-scroll">
-            If you take your health and fitness seriously...
-          </p>
-          <br />
-          <p className="animate-on-scroll">
-            If you understand the proper role that supplements play as part of a
-            balanced overall training and nutrition program...
-          </p>
-          <br />
-          <p className="animate-on-scroll">
-            And if you&apos;re looking for truly effective, no nonsense formulas
-            to maximize your results along the way...
-          </p>
-          <br />
-          <p className="animate-on-scroll">
-            Fakestore is the company you can count on.
-          </p>
-          <br />
-          <p className="animate-on-scroll">
-            Clean, simple and straightforward supplements may not be as
-            “glamorous” as those hyped up by flashy endorsements and fad
-            ingredients, but that&apos;s fine with us.
-          </p>
-          <br />
-          <p className="animate-on-scroll">
-            Our focus is purely on what works and what will provide the greatest
-            benefit to our users, and everything we do is centered around that
-            basic vision.
-          </p>
-          <br />
-          <p className="animate-on-scroll">
-            Thanks for stopping by, and we look forward to supporting you in
-            your fitness journey.
-          </p>
-          <br />
-          <p className="animate-on-scroll">
-            <Link
-              href="/products"
-              className="duration-200 hover:text-lightBlue hover:underline"
-            >
-              Click here
-            </Link>{" "}
-            to view our product list.
-          </p>
-        </div>
+        <p className="animate-on-scroll">The bottom line is this...</p>
+        <p className="animate-on-scroll">
+          If you take your health and fitness seriously...
+        </p>
+
+        <p className="animate-on-scroll">
+          If you understand the proper role that supplements play as part of a
+          balanced overall training and nutrition program...
+        </p>
+
+        <p className="animate-on-scroll">
+          And if you&apos;re looking for truly effective, no nonsense formulas
+          to maximize your results along the way...
+        </p>
+
+        <p className="animate-on-scroll">
+          Fakestore is the company you can count on.
+        </p>
+
+        <p className="animate-on-scroll">
+          Clean, simple and straightforward supplements may not be as
+          “glamorous” as those hyped up by flashy endorsements and fad
+          ingredients, but that&apos;s fine with us.
+        </p>
+
+        <p className="animate-on-scroll">
+          Our focus is purely on what works and what will provide the greatest
+          benefit to our users, and everything we do is centered around that
+          basic vision.
+        </p>
+        <p className="animate-on-scroll">
+          Thanks for stopping by, and we look forward to supporting you in your
+          fitness journey.
+        </p>
+        <p className="animate-on-scroll">
+          <Link
+            href="/products"
+            className="duration-200 hover:text-lightBlue hover:underline"
+          >
+            Click here
+          </Link>{" "}
+          to view our product list.
+        </p>
       </section>
+      {/* this is ugly af */}
     </main>
   );
 }

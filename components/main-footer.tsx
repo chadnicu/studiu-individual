@@ -102,18 +102,16 @@ export default function MainFooter() {
         </div>
         <div className="flex flex-col items-start justify-start text-left md:max-w-[200px] lg:max-w-xs">
           <h1 className="mb-1 text-sm font-semibold md:text-base">Policies</h1>
-          <FooterLink href="" blank>
+          <FooterLink href="./shipping-return-policy.pdf" blank>
             Shipping Policy
           </FooterLink>
-          <FooterLink href="" blank>
+          <FooterLink href="./privacy-policy.pdf" blank>
             Privacy Policy
           </FooterLink>
-          <FooterLink href="" blank>
+          <FooterLink href="./terms-and-conditions.pdf" blank>
             Terms of Use
           </FooterLink>
-          <FooterLink href="" blank>
-            Sign In
-          </FooterLink>
+          <FooterLink href="/sign-in">Sign In</FooterLink>
         </div>
       </div>
 
