@@ -3,7 +3,6 @@
 import { useScrollAnimation } from "@/app/hooks";
 import Image from "next/image";
 import Link from "next/link";
-import { VideoPopover } from "@/components/video-popover";
 
 export default function About() {
   useScrollAnimation("animate-on-scroll");
