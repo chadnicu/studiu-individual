@@ -1,9 +1,15 @@
+"use client";
+
+import { useRouter } from "next/navigation";
+
 export default function Page() {
+  const router = useRouter();
+
   return (
-    <div className=" flex h-full w-full flex-col items-center justify-center gap-10 backdrop-blur-sm">
-      <h1 className="px-3 text-center text-4xl font-bold md:text-6xl">
-        The start of the journey.
-      </h1>
+    <div
+      className="absolute left-0 top-0 flex h-screen w-screen flex-col items-center justify-center gap-3 bg-black/60  backdrop-blur-sm"
+      onClick={() => router.back()}
+    >
       <iframe
         src="https://www.youtube.com/embed/aBZE6FcD7qg?si=b90wLG6QMqPIWUHp"
         title="YouTube video player"
