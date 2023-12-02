@@ -27,5 +27,5 @@ export function useScrollAnimation(className: string) {
       target.classList.add("animate-fadeOut");
       observer.observe(target);
     });
-  }, []);
+  }, [className]);
 }
