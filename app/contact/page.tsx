@@ -11,7 +11,7 @@ export default function Contact() {
   });
 
   return (
-    <main className="flex w-screen flex-col items-center justify-between gap-20 px-4 text-center text-white sm:my-0 md:gap-20 lg:gap-32">
+    <main className="flex w-screen flex-col items-center justify-between gap-20 px-4 md:px-20 text-center text-white sm:my-0 md:gap-20 lg:gap-32">
       <section className="container flex flex-col items-center justify-center gap-16 px-5 md:flex-row md:px-16 lg:px-20 xl:gap-24 xl:px-32">
         <div className="grid gap-5 text-left">
           <h2 className="text-5xl font-bold md:text-6xl">
