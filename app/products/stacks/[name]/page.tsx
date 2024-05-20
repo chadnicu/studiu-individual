@@ -3,10 +3,19 @@ import { notFound } from "next/navigation";
 import { stacks } from "@/constants";
 import MapOpenner from "./map-openner";
 
-export default function Stack({ params }: { params: { name: string } }) {
-  const stack = stacks.find(
-    ({ name }) => name === params.name.toLocaleUpperCase(),
-  );
+export const dynamic = "force-static";
+
+type Params = { params: { name: string } };
+
+export default async function StackPage({ params: { name } }: Params) {
+  return await Stack(name.toUpperCase());
+}
+
+// using server action for faster page load
+async function Stack(paramName: string) {
+  "use server";
+
+  const stack = stacks.find(({ name }) => name === paramName);
 
   if (!stack) notFound();
 

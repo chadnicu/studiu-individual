@@ -3,14 +3,19 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
-export default async function Product({
-  params,
-}: {
-  params: { name: string };
-}) {
-  const product = products.find(
-    ({ name }) => name === params.name.toLocaleUpperCase(),
-  );
+export const dynamic = "force-static";
+
+type Params = { params: { name: string } };
+
+export default async function ProductPage({ params: { name } }: Params) {
+  return await Product(name.toUpperCase());
+}
+
+// using server action for faster page load
+async function Product(paramName: string) {
+  "use server";
+
+  const product = products.find(({ name }) => name === paramName);
 
   if (!product) notFound();
 
