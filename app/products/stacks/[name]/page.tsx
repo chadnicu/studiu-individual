@@ -7,15 +7,8 @@ export const dynamic = "force-static";
 
 type Params = { params: { name: string } };
 
-export default async function StackPage({ params: { name } }: Params) {
-  return await Stack(name.toUpperCase());
-}
-
-// using server action for faster page load
-async function Stack(paramName: string) {
-  "use server";
-
-  const stack = stacks.find(({ name }) => name === paramName);
+export default async function Stack({ params: { name: paramName } }: Params) {
+  const stack = stacks.find(({ name }) => name === paramName.toUpperCase());
 
   if (!stack) notFound();
 

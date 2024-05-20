@@ -2,20 +2,16 @@ import { products } from "@/constants";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import Loading from "./loading";
 
 export const dynamic = "force-static";
 
 type Params = { params: { name: string } };
 
-export default async function ProductPage({ params: { name } }: Params) {
-  return await Product(name.toUpperCase());
-}
-
-// using server action for faster page load
-async function Product(paramName: string) {
-  "use server";
-
-  const product = products.find(({ name }) => name === paramName);
+export default async function ProductPage({
+  params: { name: paramName },
+}: Params) {
+  const product = products.find(({ name }) => name === paramName.toUpperCase());
 
   if (!product) notFound();
 
