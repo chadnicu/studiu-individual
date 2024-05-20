@@ -3,8 +3,8 @@
 import { useEffect, useState } from "react";
 
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
-import { reviews } from "@/app/constants";
-import ReviewCard from "@/components/review-card";
+import { reviews } from "@/constants";
+import ReviewCard from "./review-card";
 import { cn } from "@/lib/utils";
 
 export default function SwipeableReviews() {

@@ -16,14 +16,14 @@ export default function MapOpenner({
 
   return (
     <>
-      <Image
-        src={src}
-        width={350}
-        height={330}
-        alt={alt}
-        className="w-48 duration-300 hover:scale-110 md:w-72 lg:w-80"
-        onClick={() => setOpened(true)}
-      />
+        <Image
+          src={src}
+          width={350}
+          height={330}
+          alt={alt}
+          className="w-48 duration-300 hover:scale-110 md:w-72 lg:w-80"
+          onClick={() => setOpened(true)}
+        />
       {opened && (
         <div
           className="absolute inset-0 h-screen w-screen overflow-hidden bg-darkBlue bg-opacity-90"

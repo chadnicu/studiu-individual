@@ -1,7 +1,7 @@
-import type { Review } from "@/app/constants";
+import type { Review } from "@/types";
 import Image from "next/image";
 
-export default function ReviewCard({review}: {review:Review}) {
+export default function ReviewCard({ review }: { review: Review }) {
   const { image, content, author } = review;
   return (
     <div className="flex h-fit w-60 flex-col items-center justify-center rounded-2xl bg-[#1E293B] px-4 py-2 duration-300 hover:scale-110 md:h-40 md:w-[400px] md:p-6">

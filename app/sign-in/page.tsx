@@ -4,7 +4,7 @@ export default function Login() {
   return (
     <main className="flex w-screen flex-col items-center justify-between gap-20 px-4 text-center text-white sm:my-0 md:gap-20 lg:gap-32">
       <section className="container flex max-w-xl flex-col items-center justify-center px-5 md:px-0">
-        <h1 className="mb-10 text-5xl font-bold md:text-7xl">Welcome back</h1>
+        <h1 className="mb-10 text-5xl font-bold md:text-7xl tracking-tighter">Welcome back</h1>
         <input
           type="email"
           name="email"

@@ -1,16 +1,14 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { stacks } from "@/app/constants";
-import MapOpenner from "@/components/map-openner";
+import { stacks } from "@/constants";
+import MapOpenner from "./map-openner";
 
 export default function Stack({ params }: { params: { name: string } }) {
   const stack = stacks.find(
     ({ name }) => name === params.name.toLocaleUpperCase(),
   );
 
-  if (!stack) {
-    notFound();
-  }
+  if (!stack) notFound();
 
   return (
     <section className="container flex flex-col items-center gap-10 md:px-20 lg:flex-row lg:px-40">

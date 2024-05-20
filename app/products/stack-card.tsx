@@ -1,11 +1,11 @@
-import type { Stack } from "@/app/constants";
+import type { Stack } from "@/types";
 import Image from "next/image";
 import Link from "next/link";
 
 export default function StackCard({ stack }: { stack: Stack }) {
   const { image, name, saving, price } = stack;
   return (
-    <div className="animate-on-scroll flex flex-col gap-4 hover:scale-110 duration-300">
+    <div className="animate-on-scroll flex flex-col gap-4 duration-300 hover:scale-110">
       <Link
         href={`/products/stacks/${stack.name.toLocaleLowerCase()}`}
         className="flex h-56 w-52 flex-col items-center justify-center gap-3 rounded-2xl bg-[#1E293B] p-6"
@@ -19,7 +19,7 @@ export default function StackCard({ stack }: { stack: Stack }) {
         />
       </Link>
       <div className="flex flex-col items-center justify-center gap-2">
-        <h3 className="text-base">{name} STACK</h3>
+        <h3 className="text-base font-semibold">{name} STACK</h3>
         <p className="text-xs">SAVE {saving}%</p>
         <p className="text-xs">
           <s>${price}</s> ${(price * 0.9).toFixed(2)}

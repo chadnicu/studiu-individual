@@ -2,7 +2,7 @@
 
 import { useEffect } from "react";
 
-export function useScrollAnimation(className: string) {
+export function useScrollAnimation({ cssClass }: { cssClass: string }) {
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries: IntersectionObserverEntry[]) => {
@@ -22,10 +22,10 @@ export function useScrollAnimation(className: string) {
         threshold: 0,
       },
     );
-    const targets = document.querySelectorAll(`.${className}`);
+    const targets = document.querySelectorAll(`.${cssClass}`);
     targets.forEach(function (target) {
       target.classList.add("animate-fadeOut");
       observer.observe(target);
     });
-  }, [className]);
+  }, [cssClass]);
 }

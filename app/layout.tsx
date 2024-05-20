@@ -1,8 +1,8 @@
 import "./globals.css";
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
-import MainNav from "@/components/main-nav";
-import MainFooter from "@/components/main-footer";
+import MainNav from "./main-nav";
+import MainFooter from "./main-footer";
 import { cn } from "@/lib/utils";
 
 export const inter = Inter({

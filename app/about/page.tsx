@@ -1,17 +1,17 @@
 "use client";
 
-import { useScrollAnimation } from "@/app/hooks";
+import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import Image from "next/image";
 import Link from "next/link";
 
 export default function About() {
-  useScrollAnimation("animate-on-scroll");
+  useScrollAnimation({ cssClass: "animate-on-scroll" });
 
   return (
     <main className="container flex w-screen flex-col items-center justify-between gap-20 px-5 text-center text-white sm:my-0 md:gap-20 md:px-14 lg:gap-32 lg:px-0">
       <section className="container flex flex-col items-center justify-center gap-10 px-5 md:flex-row lg:px-48 ">
         <div className="grid gap-8 text-center">
-          <h1 className="flex flex-wrap justify-center text-4xl font-bold md:text-6xl xl:text-7xl">
+          <h1 className="flex flex-wrap justify-center text-4xl font-bold tracking-tighter md:text-6xl xl:text-7xl">
             My name is <br /> Sean Nalewanyj
           </h1>
           <p className="hidden text-xs font-medium md:block md:text-base xl:text-lg">
@@ -50,7 +50,7 @@ export default function About() {
         </Link>
       </section>
       <hr className="container border-t-[1px] border-white opacity-30" />
-      <section className="container flex flex-col items-center justify-center gap-10 px-5 lg:px-48">
+      <section className="flex max-w-5xl flex-col items-start justify-center gap-10 px-5 text-left lg:px-48">
         <p className="animate-on-scroll">
           You work hard for every ounce of muscle you build, every pound of fat
           you burn, and every strength gain you achieve. You stay consistent
@@ -113,7 +113,7 @@ export default function About() {
         </div>
       </section>
       <hr className="container border-t-[1px] border-white opacity-30" />
-      <section className="animate-on-scroll container flex flex-col justify-center gap-10 px-5 lg:px-48">
+      <section className="animate-on-scroll flex max-w-5xl flex-col justify-center gap-10 px-5 text-left lg:px-48">
         <p className="animate-on-scroll">The bottom line is this...</p>
         <p className="animate-on-scroll">
           If you take your health and fitness seriously...

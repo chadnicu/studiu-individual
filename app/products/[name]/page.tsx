@@ -1,16 +1,18 @@
-import { products } from "@/app/constants";
+import { products } from "@/constants";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
-export default function Product({ params }: { params: { name: string } }) {
+export default async function Product({
+  params,
+}: {
+  params: { name: string };
+}) {
   const product = products.find(
     ({ name }) => name === params.name.toLocaleUpperCase(),
   );
 
-  if (!product) {
-    notFound();
-  }
+  if (!product) notFound();
 
   return (
     <section className="container flex flex-col items-center gap-10 md:px-20 lg:flex-row lg:px-40">

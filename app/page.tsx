@@ -9,16 +9,16 @@ import {
   TrophyIcon,
   ScaleIcon,
 } from "@heroicons/react/24/outline";
-import SwipeableReviews from "@/components/swipeable-reviews";
-import { useScrollAnimation } from "@/app/hooks";
+import SwipeableReviews from "./swipeable-reviews";
+import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
 export default function Home() {
-  useScrollAnimation("animate-on-scroll");
+  useScrollAnimation({ cssClass: "animate-on-scroll" });
 
   return (
     <main className="mt-3 flex w-screen flex-col items-center justify-between gap-32 text-center text-white md:gap-44 lg:gap-36">
       <section className="container flex flex-col items-center justify-center gap-10 px-5 md:px-16 lg:px-48">
-        <h1 className="flex flex-wrap text-4xl font-bold md:text-6xl lg:text-7xl">
+        <h1 className="flex flex-wrap text-4xl font-bold tracking-tighter md:text-6xl lg:text-7xl">
           Science based fitness suplementation
         </h1>
         <p className="text-xs font-medium md:text-lg">
@@ -117,14 +117,14 @@ export default function Home() {
       </section>
 
       <section className="container flex flex-col items-center justify-center md:gap-16 lg:flex-row">
-        <h1 className="animate-on-scroll mb-2 w-72 text-3xl font-semibold md:mb-0 md:w-96 md:text-4xl">
+        <h1 className="animate-on-scroll mb-2 w-72 text-3xl font-semibold md:mb-0 md:w-96 md:text-4xl tracking-tight">
           Check out what our customers are saying
         </h1>
         <SwipeableReviews />
       </section>
 
       <section className="container flex flex-col items-center justify-center gap-8">
-        <h1 className="animate-on-scroll text-4xl font-semibold md:text-5xl">
+        <h1 className="animate-on-scroll text-4xl font-semibold tracking-tight md:text-5xl">
           Don&apos;t miss out!
         </h1>
         <Link
