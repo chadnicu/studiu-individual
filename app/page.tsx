@@ -117,7 +117,7 @@ export default function Home() {
       </section>
 
       <section className="container flex flex-col items-center justify-center md:gap-16 lg:flex-row">
-        <h1 className="animate-on-scroll mb-2 w-72 text-3xl font-semibold md:mb-0 md:w-96 md:text-4xl tracking-tight">
+        <h1 className="animate-on-scroll mb-2 w-72 text-3xl font-semibold tracking-tight md:mb-0 md:w-96 md:text-4xl">
           Check out what our customers are saying
         </h1>
         <SwipeableReviews />

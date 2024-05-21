@@ -4,9 +4,11 @@ import { Inter } from "next/font/google";
 import MainNav from "./main-nav";
 import MainFooter from "./main-footer";
 import { cn } from "@/lib/utils";
+import { Toaster } from "@/components/ui/toaster";
 
-export const inter = Inter({
+const inter = Inter({
   subsets: ["latin"],
+  display: "swap",
 });
 
 export const viewport: Viewport = {
@@ -42,6 +44,7 @@ export default function RootLayout({
       >
         <MainNav />
         {children}
+        <Toaster />
         <MainFooter />
       </body>
     </html>

@@ -7,6 +7,7 @@ import { ReactNode, useEffect, useState } from "react";
 import { ShoppingCartIcon } from "@heroicons/react/24/outline";
 import { Cross2Icon, HamburgerMenuIcon } from "@radix-ui/react-icons";
 import { cn } from "@/lib/utils";
+import { useToast } from "@/components/ui/use-toast";
 
 export default function MainNav() {
   const [mobileMenu, setMobileMenu] = useState(false);
@@ -39,6 +40,26 @@ export default function MainNav() {
     </Link>
   );
 
+  const auth = localStorage.getItem("auth");
+  const [isSignedIn, setIsSignedIn] = useState(auth === "true");
+
+  useEffect(
+    () => setIsSignedIn(localStorage.getItem("auth") === "true"),
+    [auth],
+  );
+
+  const { toast } = useToast();
+
+  function signOut() {
+    localStorage.setItem("auth", "false");
+    setIsSignedIn(false);
+    toast({
+      title: "Successfully Logged Out",
+      description: "We're sorry to see you go ;(",
+      variant: "neutral",
+    });
+  }
+
   return (
     <>
       {/* mobile menu opened */}
@@ -57,10 +78,19 @@ export default function MainNav() {
             onClick={() => setMobileMenu(false)}
           />
           <NavLink href="/">Home</NavLink>
-          <NavLink href="/products">Products</NavLink>
+          <NavLink href="/products">Home</NavLink>
           <NavLink href="/about">About</NavLink>
           <NavLink href="/contact">Contact</NavLink>
-          <NavLink href="/sign-in">Sign In</NavLink>
+          {isSignedIn ? (
+            <button
+              className={"duration-300 hover:scale-110"}
+              onClick={signOut}
+            >
+              Sign Out
+            </button>
+          ) : (
+            <NavLink href="/sign-in">Sign In</NavLink>
+          )}
         </div>
       </section>
 
@@ -111,9 +141,18 @@ export default function MainNav() {
           <NavLink href="/contact" desktop>
             Contact
           </NavLink>
-          <NavLink href="/sign-in" desktop>
-            Sign In
-          </NavLink>
+          {isSignedIn ? (
+            <button
+              className={"hidden text-lg duration-300 hover:scale-110 md:block"}
+              onClick={signOut}
+            >
+              Sign Out
+            </button>
+          ) : (
+            <NavLink href="/sign-in" desktop>
+              Sign In
+            </NavLink>
+          )}
           <ShoppingCartIcon
             className="h-6 w-6 text-lightBlue duration-300 hover:scale-110 md:h-8 md:w-8"
             onClick={() => setShoppingCart(true)}

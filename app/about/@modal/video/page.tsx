@@ -7,7 +7,7 @@ export default function Page() {
 
   return (
     <div
-      className="absolute left-0 top-0 flex h-screen w-screen flex-col items-center justify-center gap-3 bg-black/60  backdrop-blur-sm"
+      className="absolute left-0 top-0 flex h-screen w-screen flex-col items-center justify-center gap-3 bg-black/60 backdrop-blur-sm"
       onClick={() => router.back()}
     >
       <iframe

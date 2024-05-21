@@ -20,8 +20,10 @@ export default async function Stack({ params: { name: paramName } }: Params) {
         map={stack.map}
       />
       <div className="space-y-4">
-        <h1 className="text-3xl font-bold md:text-5xl">{stack.name} STACK</h1>
-        <h2 className="text-xl font-semibold md:text-3xl">
+        <h1 className="text-3xl font-bold tracking-tight md:text-5xl">
+          {stack.name} STACK
+        </h1>
+        <h2 className="text-xl font-semibold tracking-tight md:text-3xl">
           SAVE {stack.saving}%
         </h2>
         <p>{stack.longDescription}</p>

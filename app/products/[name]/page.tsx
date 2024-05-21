@@ -2,7 +2,6 @@ import { products } from "@/constants";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import Loading from "./loading";
 
 export const dynamic = "force-static";
 
@@ -25,8 +24,10 @@ export default async function ProductPage({
         className="w-48 md:w-72 lg:w-80"
       />
       <div className="space-y-4 ">
-        <h1 className="text-3xl font-bold md:text-5xl">{product.name}</h1>
-        <h2 className="text-xl font-semibold md:text-3xl">
+        <h1 className="text-3xl font-bold tracking-tight md:text-5xl">
+          {product.name}
+        </h1>
+        <h2 className="text-xl font-semibold tracking-tight md:text-3xl">
           {product.description.toLocaleUpperCase()}
         </h2>
         <p>{product.longDescription}</p>
