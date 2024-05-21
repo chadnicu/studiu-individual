@@ -9,16 +9,25 @@ export default function SignInForm() {
 
   function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    if (typeof window === "undefined") {
+      toast({
+        title: "Authentification failed.",
+        description: "Please try again.",
+        variant: "destructive",
+      });
+      return;
+    }
     if (email === process.env.email && password === process.env.password) {
       localStorage.setItem("auth", "true");
       toast({
         title: "Successfully Logged In!",
         description: "Enjoy shopping!",
+        variant: "success",
       });
     } else {
       toast({
         title: "Uh oh! Something went wrong.",
-        description: "There was a problem with your request.",
+        description: "Couldn't find an account for this email and password.",
         variant: "destructive",
       });
     }

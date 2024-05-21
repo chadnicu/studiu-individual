@@ -40,23 +40,36 @@ export default function MainNav() {
     </Link>
   );
 
-  const auth = localStorage.getItem("auth");
+  const auth =
+    typeof window !== "undefined" ? localStorage.getItem("auth") : null;
   const [isSignedIn, setIsSignedIn] = useState(auth === "true");
 
   useEffect(
-    () => setIsSignedIn(localStorage.getItem("auth") === "true"),
+    () =>
+      setIsSignedIn(
+        typeof window !== "undefined"
+          ? localStorage.getItem("auth") === "true"
+          : false,
+      ),
     [auth],
   );
 
   const { toast } = useToast();
 
   function signOut() {
+    if (typeof window === "undefined") {
+      toast({
+        title: "Authentification failed.",
+        description: "Please try again.",
+        variant: "destructive",
+      });
+      return;
+    }
     localStorage.setItem("auth", "false");
     setIsSignedIn(false);
     toast({
       title: "Successfully Logged Out",
       description: "We're sorry to see you go ;(",
-      variant: "neutral",
     });
   }
 
