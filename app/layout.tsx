@@ -5,6 +5,7 @@ import MainNav from "./main-nav";
 import MainFooter from "./main-footer";
 import { cn } from "@/lib/utils";
 import { Toaster } from "@/components/ui/toaster";
+import GlobalContext from "./global-context";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -42,10 +43,12 @@ export default function RootLayout({
           inter.className,
         )}
       >
-        <MainNav />
-        {children}
-        <Toaster />
-        <MainFooter />
+        <GlobalContext>
+          <MainNav />
+          {children}
+          <Toaster />
+          <MainFooter />
+        </GlobalContext>
       </body>
     </html>
   );

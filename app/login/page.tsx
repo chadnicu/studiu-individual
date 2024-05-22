@@ -3,18 +3,19 @@
 import Image from "next/image";
 import Link from "next/link";
 import SignInForm from "./form";
-import { useAuth } from "@/hooks/use-auth";
+import { AuthContext } from "../global-context";
+import { useContext } from "react";
 
 export default function Login() {
-  const { auth, signOut } = useAuth();
+  const { username, signOut } = useContext(AuthContext);
 
   return (
     <main className="flex w-screen flex-col items-center justify-between gap-20 px-4 text-center text-white sm:my-0 md:gap-20 lg:gap-32">
       <section className="container flex max-w-xl flex-col items-center justify-center px-5 md:px-0">
         <h1 className="mb-10 text-5xl font-bold tracking-tighter md:text-7xl">
-          Welcome back{auth && ", " + auth}
+          Welcome back{username && ", " + username}
         </h1>
-        {auth && (
+        {username && (
           <button
             className="rounded-full bg-lightBlue px-7 py-5 text-base font-semibold duration-300 hover:scale-110 md:px-9 md:py-6 md:text-xl"
             onClick={signOut}
@@ -22,7 +23,7 @@ export default function Login() {
             Sign Out
           </button>
         )}
-        {!auth && (
+        {!username && (
           <>
             <SignInForm />
             <p className="mb-10 text-lg">

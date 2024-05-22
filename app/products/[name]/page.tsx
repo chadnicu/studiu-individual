@@ -2,6 +2,7 @@ import { products } from "@/constants";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import AddToCart from "./add-to-cart";
 
 export const dynamic = "force-static";
 
@@ -33,9 +34,7 @@ export default async function ProductPage({
         <p>{product.longDescription}</p>
         <h2 className="text-xl font-semibold md:text-3xl">${product.price}</h2>
         <div className="space-x-2 text-sm md:text-base">
-          <button className="rounded-full bg-lightBlue px-7 py-3 font-semibold duration-300 hover:scale-110">
-            Add to cart
-          </button>
+          <AddToCart product={product} />
           <span>or</span>
           <Link
             href="/products"

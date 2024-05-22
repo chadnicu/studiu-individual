@@ -1,13 +1,13 @@
 "use client";
 
-import { useAuth } from "@/hooks/use-auth";
-import { ChangeEvent, FormEvent, useState } from "react";
+import { ChangeEvent, FormEvent, useContext, useState } from "react";
+import { AuthContext } from "../global-context";
 
 export default function SignInForm() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const { signIn } = useAuth();
+  const { signIn } = useContext(AuthContext);
 
   function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();

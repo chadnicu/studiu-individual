@@ -3,12 +3,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { ReactNode, useEffect, useState } from "react";
+import { ReactNode, useContext, useEffect, useState } from "react";
 import { ShoppingCartIcon } from "@heroicons/react/24/outline";
 import { Cross2Icon, HamburgerMenuIcon } from "@radix-ui/react-icons";
 import { cn } from "@/lib/utils";
-import { useAuth } from "@/hooks/use-auth";
-import { AuthAvatar } from "./avatar";
+import { ShoppingCartContext } from "./global-context";
 
 export default function MainNav() {
   const [mobileMenu, setMobileMenu] = useState(false);
@@ -40,6 +39,8 @@ export default function MainNav() {
       {children}
     </Link>
   );
+
+  const { cart, removeFromCart, clearCart } = useContext(ShoppingCartContext);
 
   return (
     <>
@@ -76,13 +77,47 @@ export default function MainNav() {
           className="absolute h-full w-full bg-darkBlue opacity-80"
           onClick={() => setShoppingCart(false)}
         />
-        <div className="animate-fadeIn absolute right-9 top-4 flex flex-col items-center justify-center gap-7 rounded-xl bg-[#131d36] pb-9 pl-10 pr-16 pt-12 font-medium md:right-0 md:top-0 md:h-full md:w-80 md:justify-start md:rounded-none lg:w-96">
+        <div className="animate-fadeIn absolute left-4 right-4 top-4 flex flex-col items-center justify-center gap-7 overflow-y-scroll rounded-xl bg-[#131d36] pb-9 pl-10 pr-16 pt-12 font-medium md:left-auto md:right-0 md:top-0 md:h-full md:w-80 md:justify-start md:rounded-none lg:w-96">
           <Cross2Icon
             className="absolute right-5 top-5 h-5 w-5 text-white duration-300 hover:scale-110 md:right-11 md:top-10 lg:h-7 lg:w-7"
             onClick={() => setShoppingCart(false)}
           />
           <h1 className="text-lg font-bold">Shopping Cart</h1>
-          <p>Your cart is empty</p>
+          {!cart.length ? (
+            <p>Your cart is empty</p>
+          ) : (
+            <>
+              {cart.map((e, i) => (
+                <div
+                  key={i}
+                  className="flex flex-col items-center justify-center gap-2 sm:flex-row sm:gap-1"
+                >
+                  <div className="text-center">
+                    <Image
+                      src={e.image}
+                      width={100}
+                      height={150}
+                      alt={e.name}
+                    />
+                    <h3 className="text-base font-semibold">{e.name}</h3>
+                    <p className="text-xs">${e.price}</p>
+                  </div>
+                  <button
+                    className="rounded-full bg-lightBlue px-5 py-2 font-semibold duration-300 hover:scale-110"
+                    onClick={() => removeFromCart(i)}
+                  >
+                    Remove
+                  </button>
+                </div>
+              ))}
+              <button
+                onClick={clearCart}
+                className="rounded-full bg-lightBlue px-5 py-2 font-semibold duration-300 hover:scale-110"
+              >
+                Empty Whole Shopping Cart
+              </button>
+            </>
+          )}
         </div>
       </section>
 
