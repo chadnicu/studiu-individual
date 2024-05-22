@@ -33,13 +33,14 @@ export const AuthContext = createContext<AuthentificationContext>({
 export default function GlobalContext({ children }: { children: ReactNode }) {
   // cart
   const [cart, setCart] = useState<Cart>(
-    typeof window !== undefined && !!localStorage.getItem("cart")
+    typeof window !== "undefined" && !!localStorage.getItem("cart")
       ? JSON.parse(localStorage.getItem("cart") as string)
       : [],
   );
 
   useEffect(() => {
-    localStorage.setItem("cart", JSON.stringify(cart));
+    if (typeof window !== "undefined")
+      localStorage.setItem("cart", JSON.stringify(cart));
   }, [cart]);
 
   function addToCart(item: Product | Stack) {
@@ -66,12 +67,13 @@ export default function GlobalContext({ children }: { children: ReactNode }) {
 
   // auth
   const [username, setUsername] = useState<string | null>(
-    typeof window !== undefined && !!localStorage.getItem("auth")
+    typeof window !== "undefined" && !!localStorage.getItem("auth")
       ? localStorage.getItem("auth")
       : null,
   );
 
   useEffect(() => {
+    if (typeof window === "undefined") return;
     if (username) localStorage.setItem("auth", username);
     else localStorage.removeItem("auth");
   }, [username]);
