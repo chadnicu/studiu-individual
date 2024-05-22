@@ -1,15 +1,20 @@
 "use client";
 
 import { toast } from "@/components/ui/use-toast";
-import { Cart, Product, Stack } from "@/types";
+import { Product } from "@/types";
 import { ReactNode, createContext, useEffect, useState } from "react";
 
 type CartContext = {
-  cart: Cart;
-  addToCart: (item: Product | Stack) => void;
+  cart: CartItemValues[];
+  addToCart: (item: CartItemValues) => void;
   removeFromCart: (index: number) => void;
   clearCart: () => void;
 };
+
+export type CartItemValues = Omit<
+  Product,
+  "description" | "longDescription" | "starCount"
+>;
 
 export const ShoppingCartContext = createContext<CartContext>({
   cart: [],
@@ -32,7 +37,7 @@ export const AuthContext = createContext<AuthentificationContext>({
 
 export default function GlobalContext({ children }: { children: ReactNode }) {
   // cart
-  const [cart, setCart] = useState<Cart>(
+  const [cart, setCart] = useState<CartItemValues[]>(
     typeof window !== "undefined" && !!localStorage.getItem("cart")
       ? JSON.parse(localStorage.getItem("cart") as string)
       : [],
@@ -43,7 +48,7 @@ export default function GlobalContext({ children }: { children: ReactNode }) {
       localStorage.setItem("cart", JSON.stringify(cart));
   }, [cart]);
 
-  function addToCart(item: Product | Stack) {
+  function addToCart(item: CartItemValues) {
     toast({
       title: "Item was successfully added to the shopping cart.",
       variant: "success",

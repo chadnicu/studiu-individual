@@ -42,6 +42,12 @@ export default function MainNav() {
 
   const { cart, removeFromCart, clearCart } = useContext(ShoppingCartContext);
 
+  const sum = (() => {
+    let temp = 0;
+    cart.forEach((e) => (temp += e.price));
+    return temp;
+  })();
+
   return (
     <>
       {/* mobile menu opened */}
@@ -87,6 +93,7 @@ export default function MainNav() {
             <p>Your cart is empty</p>
           ) : (
             <>
+              <h2 className="text-lg font-semibold">Total: ${sum}</h2>
               {cart.map((e, i) => (
                 <div
                   key={i}

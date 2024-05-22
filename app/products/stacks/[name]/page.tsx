@@ -2,6 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { stacks } from "@/constants";
 import MapOpenner from "./map-openner";
+import AddToCart from "../../[name]/add-to-cart";
 
 export const dynamic = "force-static";
 
@@ -31,9 +32,7 @@ export default async function Stack({ params: { name: paramName } }: Params) {
           <s>${stack.price}</s> ${(stack.price * 0.9).toFixed(2)}
         </h2>
         <div className="space-x-2 text-sm md:text-base">
-          <button className="rounded-full bg-lightBlue px-7 py-3 font-semibold duration-300 hover:scale-110">
-            Add to cart
-          </button>
+          <AddToCart product={stack} />
           <span>or</span>
           <Link
             href="/products#stacks"

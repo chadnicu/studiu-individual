@@ -1,10 +1,9 @@
 "use client";
 
-import { ShoppingCartContext } from "@/app/global-context";
-import { Product } from "@/types";
+import { CartItemValues, ShoppingCartContext } from "@/app/global-context";
 import { useContext } from "react";
 
-export default function AddToCart({ product }: { product: Product }) {
+export default function AddToCart({ product }: { product: CartItemValues }) {
   const { addToCart } = useContext(ShoppingCartContext);
 
   return (
