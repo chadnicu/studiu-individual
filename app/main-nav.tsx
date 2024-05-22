@@ -7,7 +7,8 @@ import { ReactNode, useEffect, useState } from "react";
 import { ShoppingCartIcon } from "@heroicons/react/24/outline";
 import { Cross2Icon, HamburgerMenuIcon } from "@radix-ui/react-icons";
 import { cn } from "@/lib/utils";
-import { useToast } from "@/components/ui/use-toast";
+import { useAuth } from "@/hooks/use-auth";
+import { AuthAvatar } from "./avatar";
 
 export default function MainNav() {
   const [mobileMenu, setMobileMenu] = useState(false);
@@ -40,39 +41,6 @@ export default function MainNav() {
     </Link>
   );
 
-  const auth =
-    typeof window !== "undefined" ? localStorage.getItem("auth") : null;
-  const [isSignedIn, setIsSignedIn] = useState(auth === "true");
-
-  useEffect(
-    () =>
-      setIsSignedIn(
-        typeof window !== "undefined"
-          ? localStorage.getItem("auth") === "true"
-          : false,
-      ),
-    [auth],
-  );
-
-  const { toast } = useToast();
-
-  function signOut() {
-    if (typeof window === "undefined") {
-      toast({
-        title: "Authentification failed.",
-        description: "Please try again.",
-        variant: "destructive",
-      });
-      return;
-    }
-    localStorage.setItem("auth", "false");
-    setIsSignedIn(false);
-    toast({
-      title: "Successfully Logged Out",
-      description: "We're sorry to see you go ;(",
-    });
-  }
-
   return (
     <>
       {/* mobile menu opened */}
@@ -94,16 +62,7 @@ export default function MainNav() {
           <NavLink href="/products">Home</NavLink>
           <NavLink href="/about">About</NavLink>
           <NavLink href="/contact">Contact</NavLink>
-          {isSignedIn ? (
-            <button
-              className={"duration-300 hover:scale-110"}
-              onClick={signOut}
-            >
-              Sign Out
-            </button>
-          ) : (
-            <NavLink href="/sign-in">Sign In</NavLink>
-          )}
+          <NavLink href="/login">Login</NavLink>
         </div>
       </section>
 
@@ -154,18 +113,9 @@ export default function MainNav() {
           <NavLink href="/contact" desktop>
             Contact
           </NavLink>
-          {isSignedIn ? (
-            <button
-              className={"hidden text-lg duration-300 hover:scale-110 md:block"}
-              onClick={signOut}
-            >
-              Sign Out
-            </button>
-          ) : (
-            <NavLink href="/sign-in" desktop>
-              Sign In
-            </NavLink>
-          )}
+          <NavLink href="/login" desktop>
+            Login
+          </NavLink>
           <ShoppingCartIcon
             className="h-6 w-6 text-lightBlue duration-300 hover:scale-110 md:h-8 md:w-8"
             onClick={() => setShoppingCart(true)}
