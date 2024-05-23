@@ -13,15 +13,23 @@ export default function Login() {
     <main className="flex w-screen flex-col items-center justify-between gap-20 px-4 text-center text-white sm:my-0 md:gap-20 lg:gap-32">
       <section className="container flex max-w-xl flex-col items-center justify-center px-5 md:px-0">
         <h1 className="mb-10 text-5xl font-bold tracking-tighter md:text-7xl">
-          Welcome back{username && ", " + username}
+          Welcome back
+          {username && <span className="text-lightBlue"> {username}</span>}
         </h1>
         {username && (
-          <button
-            className="rounded-full bg-lightBlue px-7 py-5 text-base font-semibold duration-300 hover:scale-110 md:px-9 md:py-6 md:text-xl"
-            onClick={signOut}
-          >
-            Sign Out
-          </button>
+          <div className="flex flex-col-reverse gap-5 sm:flex-row ">
+            <button
+              className="rounded-full border border-lightBlue bg-transparent px-7 py-5 text-base font-semibold shadow-inner shadow-lightBlue duration-200 hover:scale-110 md:px-9 md:py-6 md:text-xl"
+              onClick={signOut}
+            >
+              Sign Out
+            </button>
+            <Link href={"/products"}>
+              <button className="rounded-full bg-lightBlue px-7 py-5 text-base font-semibold duration-300 hover:scale-110 md:px-9 md:py-6 md:text-xl">
+                Start Shopping
+              </button>
+            </Link>
+          </div>
         )}
         {!username && (
           <>
@@ -30,7 +38,7 @@ export default function Login() {
               Don&apos;t have access?{" "}
               <Link
                 href="/contact"
-                className="duration-200 text-lightBlue hover:underline"
+                className="text-lightBlue duration-200 hover:underline"
               >
                 Contact us
               </Link>
