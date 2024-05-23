@@ -11,6 +11,7 @@ import {
 } from "@heroicons/react/24/outline";
 import SwipeableReviews from "./swipeable-reviews";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
+import { BottomBlur } from "@/components/blurs";
 
 export default function Home() {
   useScrollAnimation({ cssClass: "animate-on-scroll" });
@@ -21,7 +22,7 @@ export default function Home() {
         <h1 className="flex flex-wrap text-4xl font-bold tracking-tighter md:text-6xl lg:text-7xl">
           Science based fitness suplementation
         </h1>
-        <p className="text-xs font-medium md:text-lg">
+        <p className="text-xs font-medium md:text-lg max-w-3xl">
           No hype. No gimmicks. Just clean, simple, scientifically-supported
           formulas that optimize body composition, training performance and
           overall health. Period.
@@ -35,7 +36,7 @@ export default function Home() {
       </section>
 
       <section className="container flex flex-col items-center justify-center gap-20">
-        <h1 className="animate-on-scroll text-3xl font-semibold md:text-4xl">
+        <h1 className="animate-on-scroll text-3xl font-semibold tracking-tight md:text-4xl">
           Our standards
         </h1>
         <div className="grid grid-cols-1 place-items-start gap-16 px-10 md:grid-cols-2 md:px-24 lg:grid-cols-3 lg:px-20">
@@ -117,14 +118,15 @@ export default function Home() {
       </section>
 
       <section className="container flex flex-col items-center justify-center md:gap-16 lg:flex-row">
-        <h1 className="animate-on-scroll mb-2 w-72 text-3xl font-semibold tracking-tight md:mb-0 md:w-96 md:text-4xl">
+        <h1 className="animate-on-scroll mb-2 w-72 text-3xl font-semibold tracking-tighter md:mb-0 md:w-96 md:text-4xl">
           Check out what our customers are saying
         </h1>
+        <BottomBlur />
         <SwipeableReviews />
       </section>
 
-      <section className="container flex flex-col items-center justify-center gap-8">
-        <h1 className="animate-on-scroll text-4xl font-semibold tracking-tight md:text-5xl">
+      <section className="container flex flex-col items-center justify-center gap-8 ">
+        <h1 className="animate-on-scroll text-4xl font-semibold tracking-tighter md:text-5xl">
           Don&apos;t miss out!
         </h1>
         <Link

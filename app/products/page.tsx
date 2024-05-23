@@ -6,6 +6,7 @@ import { stacks } from "@/constants/stacks";
 import ProductCard from "./product-card";
 import StackCard from "./stack-card";
 import { cn } from "@/lib/utils";
+import { BottomBlur } from "@/components/blurs";
 
 export default function Products() {
   useScrollAnimation({ cssClass: "animate-on-scroll" });
@@ -13,7 +14,7 @@ export default function Products() {
   return (
     <main className="flex w-screen flex-col items-center justify-between gap-20 text-center text-white md:gap-20 lg:gap-32">
       <section className="container flex flex-col items-center justify-center gap-16 px-5 md:gap-20">
-        <h1 className="flex flex-wrap text-4xl font-bold md:text-6xl lg:text-7xl tracking-tighter">
+        <h1 className="flex flex-wrap text-4xl font-bold tracking-tighter md:text-6xl lg:text-7xl">
           Supplements
         </h1>
         <div
@@ -35,7 +36,8 @@ export default function Products() {
         className="container flex flex-col items-center justify-center gap-16 px-5 md:gap-20"
         id="stacks"
       >
-        <h1 className="animate-on-scroll flex flex-wrap text-4xl font-bold md:text-6xl lg:text-7xl tracking-tighter">
+        <BottomBlur />
+        <h1 className="animate-on-scroll flex flex-wrap text-4xl font-bold tracking-tighter md:text-6xl lg:text-7xl">
           Stacks
         </h1>
         <div className="grid grid-cols-1 gap-20 md:grid-cols-3 md:gap-x-10 ">

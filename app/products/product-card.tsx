@@ -3,6 +3,7 @@ import Link from "next/link";
 import type { Product } from "@/types";
 import { cn } from "@/lib/utils";
 import { StarIcon } from "@heroicons/react/20/solid";
+import { BottomBlur, TopBlur } from "@/components/blurs";
 
 export default function ProductCard({
   product,
@@ -15,13 +16,13 @@ export default function ProductCard({
   return (
     <div
       className={cn(
-        "flex flex-col gap-4 duration-300 hover:scale-110",
+        "flex flex-col items-center justify-center gap-4 overflow-hidden duration-300 hover:scale-110",
         className,
       )}
     >
       <Link
         href={"/products/" + name.toLocaleLowerCase()}
-        className="flex h-56 w-52 flex-col items-center justify-center gap-3 rounded-2xl bg-[#1E293B] p-6"
+        className="flex h-fit w-[220px] flex-col items-center justify-center gap-3 rounded-3xl bg-transparent py-6 shadow-inner shadow-[#38BDF8] backdrop-blur-sm"
       >
         <Image
           src={image}
@@ -31,7 +32,8 @@ export default function ProductCard({
           alt={name}
         />
       </Link>
-      <div className="flex flex-col items-center justify-center gap-2">
+      <div className="flex flex-col items-center justify-center gap-2 break-words">
+        {/* flex flex-col items-center justify-center gap-2 */}
         <h3 className="text-base font-semibold">{name}™</h3>
         <p className="text-xs">{description}</p>
         <div className="flex gap-1">

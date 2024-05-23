@@ -6,6 +6,7 @@ import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
 import { reviews } from "@/constants";
 import ReviewCard from "./review-card";
 import { cn } from "@/lib/utils";
+import Link from "next/link";
 
 export default function SwipeableReviews() {
   const [translateX, setTranslateX] = useState(0);
@@ -46,7 +47,10 @@ export default function SwipeableReviews() {
   return (
     <div className="animate-on-scroll flex items-center">
       <button
-        className="h-10 rounded-full duration-300 hover:scale-150 hover:text-lightBlue"
+        className={cn(
+          "h-10 rounded-full duration-300 hover:scale-150 hover:text-lightBlue",
+          { "opacity-0": count <= 0 },
+        )}
         onClick={decrement}
       >
         <ChevronLeftIcon className="h-6 w-6" />
@@ -62,14 +66,21 @@ export default function SwipeableReviews() {
             <ReviewCard key={index} review={review} />
           ))}
           <div className="w-60 md:w-[400px]">
-            <button className="rounded-full bg-lightBlue px-7 py-5 text-base font-semibold duration-300 hover:scale-110 md:px-9 md:py-6 md:text-xl">
-              Read more
-            </button>
+            <Link
+              href="https://www.realscienceathletics.com/pages/reviews"
+              target="_blank"
+              className=""
+            >
+              <button className="rounded-full bg-lightBlue px-7 py-5 text-base font-semibold duration-300 hover:scale-110 md:px-9 md:py-6 md:text-xl">Read more</button>
+            </Link>
           </div>
         </div>
       </div>
       <button
-        className="h-10 cursor-pointer rounded-full duration-300 hover:scale-150 hover:text-lightBlue"
+        className={cn(
+          "h-10 cursor-pointer rounded-full duration-300 hover:scale-150 hover:text-lightBlue",
+          { "opacity-0": count >= reviews.length },
+        )}
         onClick={increment}
       >
         <ChevronRightIcon className="h-6 w-6" />

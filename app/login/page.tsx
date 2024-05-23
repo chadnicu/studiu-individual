@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import SignInForm from "./form";
+import SignInForm from "./login-form";
 import { AuthContext } from "../global-context";
 import { useContext } from "react";
 
@@ -30,7 +30,7 @@ export default function Login() {
               Don&apos;t have access?{" "}
               <Link
                 href="/contact"
-                className="duration-200 hover:text-lightBlue hover:underline"
+                className="duration-200 text-lightBlue hover:underline"
               >
                 Contact us
               </Link>

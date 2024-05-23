@@ -1,5 +1,6 @@
 "use client";
 
+import { BottomBlur } from "@/components/blurs";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import Image from "next/image";
 import Link from "next/link";
@@ -87,6 +88,7 @@ export default function About() {
       </section>
       <hr className="container border-t-[1px] border-white opacity-50" />
       <section className="container flex flex-col justify-center gap-10 px-5 lg:px-48">
+        <BottomBlur />
         <div className="flex flex-col items-end gap-5 text-right">
           <h3 className="animate-on-scroll max-w-md text-xl font-bold">
             THE BIG PROBLEMS WITH THE MAJORITY OF &quot;MAINSTREAM&quot; FITNESS
@@ -151,7 +153,7 @@ export default function About() {
         <p className="animate-on-scroll">
           <Link
             href="/products"
-            className="duration-200 hover:text-lightBlue hover:underline"
+            className="duration-200 text-lightBlue hover:underline"
           >
             Click here
           </Link>{" "}

@@ -14,7 +14,7 @@ export default function MainFooter() {
   }) => (
     <Link
       href={href}
-      className="text-xs md:text-sm"
+      className="text-xs md:text-sm hover:underline hover:text-lightBlue duration-200"
       target={blank ? "_blank" : "_self"}
     >
       {children}

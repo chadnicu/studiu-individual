@@ -3,8 +3,10 @@ import Image from "next/image";
 
 export default function ReviewCard({ review }: { review: Review }) {
   const { image, content, author } = review;
+
+  // bg-[#1E293B]
   return (
-    <div className="flex h-fit w-60 flex-col items-center justify-center rounded-2xl bg-[#1E293B] px-4 py-2 duration-300 hover:scale-110 md:h-40 md:w-[400px] md:p-6">
+    <div className="flex h-fit w-60 flex-col items-center justify-center rounded-2xl bg-transparent px-4 py-2 shadow-inner shadow-lightBlue backdrop-blur-sm duration-300 hover:scale-110 md:h-40 md:w-[400px] md:p-6">
       <div className="gap mt-3 flex items-center justify-center gap-2">
         <Image
           src={image}

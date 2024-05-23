@@ -6,6 +6,7 @@ import MainFooter from "./main-footer";
 import { cn } from "@/lib/utils";
 import { Toaster } from "@/components/ui/toaster";
 import GlobalContext from "./global-context";
+import { BottomBlur, MiddleBlur, TopBlur } from "@/components/blurs";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -39,11 +40,13 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={cn(
-          "items-around dark flex min-h-screen flex-col justify-between gap-20 overflow-x-hidden bg-darkBlue bg-[url('/background-blur.png')] bg-cover bg-center bg-no-repeat tracking-tight",
+          "items-around dark flex min-h-screen flex-col justify-between gap-20 overflow-x-hidden bg-darkBlue tracking-tight ",
           inter.className,
         )}
       >
         <GlobalContext>
+          <TopBlur />
+          <MiddleBlur />
           <MainNav />
           {children}
           <Toaster />
