@@ -49,7 +49,7 @@ export default function MainNav() {
   })();
 
   return (
-    <>
+    <header>
       {/* mobile menu opened */}
       <section
         className={cn("absolute z-10 h-screen w-screen md:hidden", {
@@ -66,7 +66,7 @@ export default function MainNav() {
             onClick={() => setMobileMenu(false)}
           />
           <NavLink href="/">Home</NavLink>
-          <NavLink href="/products">Home</NavLink>
+          <NavLink href="/products">Products</NavLink>
           <NavLink href="/about">About</NavLink>
           <NavLink href="/contact">Contact</NavLink>
           <NavLink href="/login">Login</NavLink>
@@ -168,6 +168,6 @@ export default function MainNav() {
           />
         </div>
       </nav>
-    </>
+    </header>
   );
 }
