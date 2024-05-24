@@ -6,11 +6,10 @@ import MainFooter from "./main-footer";
 import { cn } from "@/lib/utils";
 import { Toaster } from "@/components/ui/toaster";
 import GlobalContext from "./global-context";
-import { BottomBlur, MiddleBlur, TopBlur } from "@/components/blurs";
+import { MiddleBlur, TopBlur } from "@/components/blurs";
 
 const inter = Inter({
   subsets: ["latin"],
-  display: "swap",
 });
 
 export const viewport: Viewport = {
@@ -23,12 +22,12 @@ export const metadata: Metadata = {
   applicationName: "Fakestore",
   authors: [
     {
-      name: "iusedebian",
-      url: "https://github.com/iusedebian",
+      name: "chadnicu",
+      url: "https://github.com/chadnicu",
     },
   ],
-  creator: "iusedebian",
-  publisher: "iusedebian",
+  creator: "chadnicu",
+  publisher: "chadnicu",
 };
 
 export default function RootLayout({
